@@ -10,7 +10,7 @@ export const setupStore = () => {
     })
 };
 
-//poluczajem tipy: sostojania, tip stora, tip dispatcza stor
+//get types: first - typ state, second - typ store, third - typ dispatch store
 export type RootState = ReturnType<typeof rootReducers>
 export type AppStore = ReturnType<typeof setupStore>
 export type AppDispatch = AppStore['dispatch']

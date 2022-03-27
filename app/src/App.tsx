@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
-import {useAppSelector} from "./store/hooks/redux";
+import {useAppDispatch, useAppSelector} from "./store/hooks/redux";
+import {fetchUsers} from "./store/reducers/ActionCreators";
+
 
 function App() {
-    const {} = useAppSelector(state => state.userReducer.users)
+  const dispatch = useAppDispatch();
+  const {users, isLoading, error} = useAppSelector(state => state.userReducer);
+
+  useEffect(() => {
+     dispatch(fetchUsers())
+  }, [])
+
   return (
     <div className="App">
-       test
+        { isLoading && <h1>Data being loaded ...</h1>}
+        { error && <h1>{error} ...</h1>}
+        {
+            JSON.stringify(users, null, 2)
+        }
     </div>
   );
 }
