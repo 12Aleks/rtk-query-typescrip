@@ -1,12 +1,13 @@
 import {IUser} from "../models/IUser";
 import {createSlice} from "@reduxjs/toolkit";
 import {PayloadAction} from "@reduxjs/toolkit/dist/createAction";
+import {fetchUsers} from "./ActionCreators";
 
 
 interface UserState {
     users: IUser[];
     isLoading: boolean;
-    error?: string | unknown ;
+    error?: string | unknown;
 }
 
 const initialState: UserState = {
@@ -18,20 +19,48 @@ const initialState: UserState = {
 export const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {
-       usersFetching(state) {
-          state.isLoading = true
-       },
-        usersFetchingSuccess(state, action: PayloadAction<IUser[]>) {
-           state.isLoading = false;
-           state.error = '';
-           state.users = action.payload
+     // perwyj wariant realizacii
+    //reducers: {
+        //naczalas zagruzka dannych
+    //     usersFetching(state) {
+    //         state.isLoading = true
+    //     },
+    //     //zagruzka dannych i jejo uspesznoje okonczanie
+    //     usersFetchingSuccess(state, action: PayloadAction<IUser[]>) {
+    //         state.isLoading = false;
+    //         state.error = '';
+    //         state.users = action.payload
+    //
+    //     },
+    //     //oszybka pri zagruzkie dannych
+    //     usersFetchingError(state, action: PayloadAction<string>) {
+    //         state.isLoading = false;
+    //         state.error = action.payload
+    //     }
+    // },
+    //
 
+
+    // pri ispolzowanii Thunk
+    reducers: {},
+    extraReducers: {
+        //ozydanie
+        [fetchUsers.pending.type]: (state) => {
+            state.isLoading = true;
         },
-        usersFetchingError(state, action: PayloadAction<string>) {
+
+        //uspesznaja zagruzka
+        [fetchUsers.fulfilled.type]: (state, action: PayloadAction<IUser[]>) => {
             state.isLoading = false;
-            state.error = action.payload
-        }
+            state.error = '';
+            state.users = action.payload;
+        },
+
+        //oszybka
+        [fetchUsers.rejected.type]: (state, action: PayloadAction<string>) => {
+            state.isLoading = false;
+            state.error = action.payload;
+        },
     }
 });
 
