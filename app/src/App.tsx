@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import './App.css';
 import {useAppDispatch, useAppSelector} from "./store/hooks/redux";
 import {fetchUsers} from "./store/reducers/ActionCreators";
+import PostContainer from "./store/components/PostContainer";
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         {/*{*/}
         {/*    JSON.stringify(users, null, 2)*/}
         {/*}*/}
+
+        {/*RTK QUERY*/}
+        <PostContainer/>
     </div>
   );
 }
