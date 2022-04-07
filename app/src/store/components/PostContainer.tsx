@@ -13,7 +13,8 @@ const PostContainer = () => {
     });
     //funkcija nazywajetsa po nazwaniu endpojeta sozdannogo nize
     const [createPost, {error: createError, isLoading: isCreateLoading}] = postAPI.useCreatePostMutation();
-
+    const [updatePost, {}] = postAPI.useUpdatePostMutation();
+    const [deletePost, {}] = postAPI.useDeletePostMutation()
 
     //testowoje izmenenije limita, keszyrowania dannych
     // useEffect(() => {
@@ -23,9 +24,18 @@ const PostContainer = () => {
     // }, []);
 
     const handleCreate = async() => {
-       const title = prompt()
+       const title = prompt();
+        //jawno ukazywajem czto objekt tipa IPost
         await createPost({title, body: title} as IPost)
     };
+
+    const handleRemove = (post: IPost) => {
+       deletePost(post)
+    };
+
+    const handleUpdate = (post: IPost) => {
+      updatePost(post)
+    }
 
     return (
         <div className='post__list'>
@@ -36,7 +46,7 @@ const PostContainer = () => {
             <button onClick={() => refetch()}>REFETCH</button>
             {
                 posts && posts.map(post =>
-                   <PostItem key={post.id} post={post}/>
+                   <PostItem remove={handleRemove} update={handleUpdate} key={post.id} post={post}/>
                 )
             }
         </div>
