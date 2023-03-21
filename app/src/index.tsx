@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import {Provider} from 'react-redux';
-import {setupStore} from "./store/store";
+import {Provider} from "react-redux";
+import {RootStore} from "./store";
 
-
-//import store iz funcii setupStore
-const store = setupStore()
+const store = RootStore()
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <App/>
     </Provider>
-,
-  document.getElementById('root')
+    ,
+    document.getElementById('root')
 );
 
 

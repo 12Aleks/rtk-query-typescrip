@@ -1,28 +1,24 @@
-import React, {useEffect} from 'react';
-import './App.css';
-import {useAppDispatch, useAppSelector} from "./store/hooks/redux";
-import {fetchUsers} from "./store/reducers/ActionCreators";
-import PostContainer from "./store/components/PostContainer";
+import React from 'react';
+import {fetchPhotos} from "./store/services/services";
+
 
 
 function App() {
-  // const dispatch = useAppDispatch();
-  // const {users, isLoading, error} = useAppSelector(state => state.userReducer);
-  //
-  // useEffect(() => {
-  //    dispatch(fetchUsers())
-  // }, [])
+  const {data: photos} = fetchPhotos.useFetchPhotosQuery(5)
+
+
 
   return (
     <div className="App">
-        {/*{ isLoading && <h1>Data being loaded ...</h1>}*/}
-        {/*{ error && <h1>{error} ...</h1>}*/}
-        {/*{*/}
-        {/*    JSON.stringify(users, null, 2)*/}
-        {/*}*/}
-
-        {/*RTK QUERY*/}
-        <PostContainer/>
+       <h4>Photos</h4>
+        <div style={{display: 'inline-block', width: '100%'}}>
+        {photos?.map(photo =>
+            <div key={photo.id} style={{width: '30%', float: 'right', margin: '15px'}}>
+                <img src={photo.url} alt={photo.title} style={{maxWidth: '100%', height: 'auto'}}/>
+                <p>{photo.title}</p>
+            </div>
+        )}
+        </div>
     </div>
   );
 }
