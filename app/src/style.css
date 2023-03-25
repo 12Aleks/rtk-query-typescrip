@@ -1,0 +1,38 @@
+.navbar-nav a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.title {
+    padding: 60px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font: 500 26px/26px Calibri;
+    letter-spacing: 1px;
+}
+.card-title{
+    letter-spacing: 1px;
+    word-break: break-word;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 73px;
+}
+.card-text{
+    margin: 10px 0;
+    letter-spacing: 1px;
+    word-break: break-all;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

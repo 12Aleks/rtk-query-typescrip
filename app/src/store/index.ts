@@ -1,17 +1,15 @@
-import {configureStore, combineReducers} from "@reduxjs/toolkit";
-import {fetchPhotos} from "./services/services";
+import {configureStore, combineReducers} from '@reduxjs/toolkit'
+import {fetchPosts} from "./apiSlice/post.rtk";
 
-const rootReducer = combineReducers({
-    [fetchPhotos.reducerPath]: fetchPhotos.reducer
-});
+const reducer = combineReducers({
+   [fetchPosts.reducerPath] : fetchPosts.reducer
+})
 
 export const RootStore = () => configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(fetchPhotos.middleware)
-
+    reducer,
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(fetchPosts.middleware)
 })
 
 export type AppStore = ReturnType<typeof RootStore>
-export type AppState = ReturnType<typeof rootReducer>
-export type  AppDispatch = AppStore['dispatch']
+export type AppState = ReturnType<typeof reducer>
+export type AppDispatch = AppStore['dispatch']
