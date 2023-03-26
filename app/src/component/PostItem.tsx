@@ -9,7 +9,7 @@ interface IPostItem {
 const PostItem: FC<IPostItem> = ({post}) => {
     return (
         <Col sm={12} xs={6} md={3}>
-            <Card style={{maxWidth: '18rem', margin: '10px auto', display: 'block'}} >
+            <Card style={{maxWidth: '25rem', margin: '10px auto', display: 'block'}} >
                 <Card.Body>
                     <Card.Title>{post.title}</Card.Title>
                     <Card.Text>

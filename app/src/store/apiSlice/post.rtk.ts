@@ -14,6 +14,16 @@ export const fetchPosts = createApi({
                 }
             }),
             providesTags: result => ['POSTS']
+        }),
+        createPost: build.mutation<IPost[], IPost>({
+            query: (post: IPost) => ({
+                url: 'posts',
+                method: 'POST',
+                body: post
+            }),
+            invalidatesTags:  ['POSTS']
         })
     })
 })
+
+export const {useCreatePostMutation} = fetchPosts

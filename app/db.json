@@ -1,15 +1,54 @@
 {
   "posts": [
-    { "id": 1, "title": "What were the best popular history books published in hardback in 2021 in the UK?", "body": "These are the best popular history books that we have read and reviewed on this site. I’m sure that there are other fantastic history books out there which unfortunately we haven’t had the time to read! River Kings: A New History of Vikings from Scandinavia to the Silk Roads by Cat Jarman\nThe Fall of Robespierre: 24 Hours in Revolutionary Paris\nCheckmate in Berlin: the first battle of the cold war\nNorse America: The Story of a Founding Myth" },
-    { "id": 2, "title": "Motivation for European conquest of the New World", "body": "Historians generally recognize three motives for European exploration and colonization in the New World: God, gold, and glory. Religious motivations can be traced all the way back to the Crusades, the series of religious wars between the 11th and 15th centuries during which European Christians sought to claim Jerusalem as an exclusively Christian space. Europeans also searched for optimal trade routes to lucrative Asian markets and hoped to gain global recognition for their country." },
-    { "id": 3, "title": "Why the History World Craze Took Over the World", "body": "typicode" },
-    { "id": 4, "title": "10 Insider Tips for Running a Successful History World", "body": "typicode" },
-    { "id": 5, "title": "Is This History World Really Worth the Price?", "body": "typicode" },
-    { "id": 6, "title": "How to Create Your Own History World in 5 Simple Steps", "body": "typicode" },
-    { "id": 7, "title": "What I Wish I Knew Before Going to the History World", "body": "typicode" }
+    {
+      "id": 1,
+      "title": "What were the best popular history books published in hardback in 2021 in the UK?",
+      "body": "These are the best popular history books that we have read and reviewed on this site. I’m sure that there are other fantastic history books out there which unfortunately we haven’t had the time to read! River Kings: A New History of Vikings from Scandinavia to the Silk Roads by Cat Jarman\nThe Fall of Robespierre: 24 Hours in Revolutionary Paris\nCheckmate in Berlin: the first battle of the cold war\nNorse America: The Story of a Founding Myth"
+    },
+    {
+      "id": 2,
+      "title": "Motivation for European conquest of the New World",
+      "body": "Historians generally recognize three motives for European exploration and colonization in the New World: God, gold, and glory. Religious motivations can be traced all the way back to the Crusades, the series of religious wars between the 11th and 15th centuries during which European Christians sought to claim Jerusalem as an exclusively Christian space. Europeans also searched for optimal trade routes to lucrative Asian markets and hoped to gain global recognition for their country."
+    },
+    {
+      "id": 3,
+      "title": "Why the History World Craze Took Over the World",
+      "body": "typicode"
+    },
+    {
+      "id": 4,
+      "title": "10 Insider Tips for Running a Successful History World",
+      "body": "typicode"
+    },
+    {
+      "id": 5,
+      "title": "Is This History World Really Worth the Price?",
+      "body": "typicode"
+    },
+    {
+      "id": 6,
+      "title": "How to Create Your Own History World in 5 Simple Steps",
+      "body": "typicode"
+    },
+    {
+      "title": "Which two Native American leaders led Lakota Sioux and Cheyenne warriors in the fight against Lieutenant Colonel George Custer’s troops in the Battle of Little Bighorn?",
+      "body": " Crazy Horse and Sitting Bull",
+      "id": 7
+    },
+    {
+      "title": "The “shot heard ’round the world” describes the beginning of which battles in the American Revolution?",
+      "body": "The Battles of Lexington and Concord",
+      "id": 8
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }

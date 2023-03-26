@@ -31,8 +31,9 @@
     -webkit-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    height: 50px;
 }
