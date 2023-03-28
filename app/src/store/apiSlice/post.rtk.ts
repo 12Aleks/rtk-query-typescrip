@@ -15,6 +15,12 @@ export const fetchPosts = createApi({
             }),
             providesTags: result => ['POSTS']
         }),
+        getPost: build.query<IPost, IPost>({
+            query: (post: IPost) => ({
+                url: `posts/${post.id}`
+            }),
+            providesTags: result => ['POSTS']
+        }),
         createPost: build.mutation<IPost[], IPost>({
             query: (post: IPost) => ({
                 url: 'posts',
@@ -22,6 +28,21 @@ export const fetchPosts = createApi({
                 body: post
             }),
             invalidatesTags:  ['POSTS']
+        }),
+        deletePost: build.mutation<IPost, IPost>({
+            query: (post: IPost) => ({
+                url: `posts/${post.id}`,
+                method: 'DELETE'
+            }),
+            invalidatesTags: ['POSTS']
+        }),
+        updatePost: build.mutation<IPost, IPost>({
+            query: (post: IPost) => ({
+                url: `posts/${post.id}`,
+                method: 'PUT',
+                body: post
+            }),
+            invalidatesTags: ['POSTS']
         })
     })
 })
