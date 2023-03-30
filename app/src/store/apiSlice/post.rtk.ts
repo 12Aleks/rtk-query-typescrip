@@ -15,9 +15,9 @@ export const fetchPosts = createApi({
             }),
             providesTags: result => ['POSTS']
         }),
-        getPost: build.query<IPost, IPost>({
-            query: (post: IPost) => ({
-                url: `posts/${post.id}`
+        getPost: build.query<IPost, number>({
+            query: (num: number) => ({
+                url: `posts/${num}`
             }),
             providesTags: result => ['POSTS']
         }),

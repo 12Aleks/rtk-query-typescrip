@@ -4,9 +4,9 @@ import {Link} from "react-router-dom";
 
 const NavbarPage = () => {
     return (
-        <Navbar expand="lg" bg="dark" variant="dark">
+        <Navbar expand="lg" style={{background: '#a5da0c'}}>
             <Container>
-                <Navbar.Brand href="#home">Api - RTK Query</Navbar.Brand>
+                <Navbar.Brand href="#home" style={{color: 'white'}}>Api - RTK Query</Navbar.Brand>
                 <Nav className="justify-content-end">
                     <Nav.Link ><Link to="/">Home</Link></Nav.Link>
                     <Nav.Link ><Link to="/posts">Posts</Link></Nav.Link>

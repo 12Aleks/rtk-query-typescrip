@@ -3,7 +3,7 @@ import {IPost} from "../store/types";
 import {Card, Button, Col} from "react-bootstrap";
 import {fetchPosts} from "../store/apiSlice/post.rtk";
 import ModalWindow from "./ModalWindow";
-
+import { useNavigate  } from "react-router-dom";
 
 interface IPostItem {
     post: IPost
@@ -12,19 +12,25 @@ interface IPostItem {
 const PostItem: FC<IPostItem> = ({post}) => {
     const [deletePost, {error: deleteError, isLoading: deleteLoading}] = fetchPosts.useDeletePostMutation()
     const [show, setShow] = useState<boolean>(false);
-
+    const navigate = useNavigate()
 
 
     const handleDelete = async(post: IPost) => {
        await deletePost(post)
+
     }
 
+
+    const singlePost = (e: React.MouseEvent<HTMLElement, MouseEvent>, post: IPost) => {
+        e.preventDefault()
+        navigate(`/posts/${post.id}`)
+    }
 
    if(deleteError) return <h2 className="text-center">Error !!!</h2>
     // if(deleteLoading) return <SpinnerComponent/>
 
     return (
-        <Col sm={12} xs={6} md={3}>
+        <Col sm={12} xs={6} md={3} onClick={e => singlePost(e, post)} style={{cursor: 'pointer'}}>
             <ModalWindow show={show} setShow={setShow} post={post}/>
             <Card style={{maxWidth: '25rem', margin: '10px auto', display: 'block'}} >
                 <Card.Body>

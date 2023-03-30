@@ -1,9 +1,11 @@
 import React from 'react';
 
+
+
 const Home = () => {
     return (
         <>
-            <h2 className="title">Home</h2>
+            <div style={{background: `url(${require('../assets/stock-photo-post-comment-crossword.jpg')})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', width: '100%', height: '100vh', backgroundPosition: 'center' }}></div>
         </>
     );
 };

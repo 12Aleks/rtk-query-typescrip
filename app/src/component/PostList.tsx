@@ -3,8 +3,9 @@ import PostItem from "./PostItem";
 import {fetchPosts} from "../store/apiSlice/post.rtk";
 import {Button} from "react-bootstrap";
 import ModalWindow from "./ModalWindow";
+import SpinnerComponent from "./SpinnerComponent";
 
-const SpinnerComponent = lazy(() => import('./SpinnerComponent'))
+
 
 const PostList = () => {
 
